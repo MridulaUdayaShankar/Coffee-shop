@@ -1,7 +1,7 @@
 // Import the ORM to create functions that will interact with the database.
 var orm = require("../config/orm.js");
 
-var cat = {
+var coff = {
   all: function(cb) {
     orm.all("coffee", function(res) {
       cb(res);
@@ -21,4 +21,4 @@ var cat = {
 };
 
 // Export the database functions for the controller (coffeeController.js).
-module.exports = cat;
+module.exports = coff;

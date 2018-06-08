@@ -3,13 +3,13 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (coff.js) to use its database functions.
-var coff = require("../models/coffeeshop.js");
+var coffees = require("../models/coffeeshop.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  coff.all(function(data) {
+  coffees.all(function(data) {
     var hbsObject = {
-      coffs: data
+      coffee_order: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/coffee", function(req, res) {
-  coff.create(["name", "drink"], [req.body.name, req.body.drink], function(result) {
+  coffees.create(["name", "drink"], [req.body.name, req.body.drink], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
@@ -28,7 +28,7 @@ router.put("/api/coffee/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  coff.update(
+  coffees.update(
     {
       drink: req.body.drink
     },

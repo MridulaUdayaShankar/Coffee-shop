@@ -14,7 +14,7 @@ $(function () {
       data: newDrinkState
     }).then(
       function () {
-        console.log("changed sleep to", newDrink);
+        console.log("changed drink to", newDrink);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -27,7 +27,7 @@ $(function () {
 
     var newCoffee = {
       name: $("#ca").val().trim(),
-      drink: $("[name=drink]:checked").val().trim()
+      drink: $("[name=drink]").val()
     };
 
     // Send the POST request.
