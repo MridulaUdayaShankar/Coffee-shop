@@ -27,7 +27,7 @@ $(function () {
 
     var newCoffee = {
       name: $("#ca").val().trim(),
-      drink: $("[name=drink]").val()
+      drink: $("[name=drink]:checked").val()
     };
 
     // Send the POST request.

@@ -11,8 +11,8 @@ router.get("/", function(req, res) {
     var hbsObject = {
       coffee_order: data
     };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
+    console.log(JSON.stringify(hbsObject));
+    res.render("index", data);
   });
 });
 
