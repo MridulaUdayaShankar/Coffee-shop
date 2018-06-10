@@ -10,6 +10,8 @@ Node and MySQL to query and route data in your app and Handlebars to generate HT
 * The app will store every coffee in a database, whether finished drinking or not
         
 * Heroku is used for hosting the application
+#### A Preview of the App
+![demo](public/assets/img/screenshot.png)
 
 #### Installation
 * NodeJs
