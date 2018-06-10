@@ -11,7 +11,7 @@
         {{#each this}} {{#if drink}}
         <li>
           {{name}}
-          <button type="button" class="btn btn-light btn-sm" name="drink" value="1">SluRRp</button>
+          <button type="button" id="update-drink-{{id}}" data-id="{{id}}" class="btn btn-light btn-sm update-drink" name="drink">SluRRp</button>
         </li>
         {{/if}} {{/each}}
       </ul>
@@ -24,7 +24,7 @@
         {{#each this}} {{#unless drink}}
         <li>
           {{name}}
-          <button type="button" class="btn btn-light btn-sm" name="drink" value="0"></button>
+          <button type="button" class="btn btn-light btn-sm" name="drink"></button>
         </li>
         {{/unless}} {{/each}}
       </ul>

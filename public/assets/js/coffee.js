@@ -1,20 +1,14 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
-  $(".change-drink").on("click", function (event) {
-    var id = $(this).data("id");
-    var newDrink = $(this).data("newdrink");
 
-    var newDrinkState = {
-      drink: newDrink
-    };
+  $(".update-drink").on("click", function (event) {
+    var id = $(this).attr('data-id');
 
     // Send the PUT request.
-    $.ajax("/api/coffee/" + id, {
+    $.ajax(`/api/coffee/${id}/0`, {
       type: "PUT",
-      data: newDrinkState
     }).then(
       function () {
-        console.log("changed drink to", newDrink);
         // Reload the page to get the updated list
         location.reload();
       }
@@ -27,7 +21,7 @@ $(function () {
 
     var newCoffee = {
       name: $("#ca").val().trim(),
-      drink: $("[name=drink]").val()
+      drink: 1
     };
 
     // Send the POST request.

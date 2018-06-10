@@ -7,12 +7,8 @@ var coffees = require("../models/coffeeshop.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  coffees.all(function(data) {
-    var hbsObject = {
-      coffee_order: data
-    };
-    console.log(JSON.stringify(hbsObject));
-    res.render("index", data);
+  coffees.all(function(result) {
+    res.render("index", result);
   });
 });
 
@@ -23,14 +19,16 @@ router.post("/api/coffee", function(req, res) {
   });
 });
 
-router.put("/api/coffee/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+router.put("/api/coffee/:id/:drink", function(req, res) {
+  var condition = `id=${parseInt(req.params.id)}`;
+  var drink =  parseInt(req.params.drink);
 
-  console.log("condition", condition);
+
+  console.log("condition", );
 
   coffees.update(
     {
-      drink: req.body.drink
+      drink
     },
     condition,
     function(result) {
