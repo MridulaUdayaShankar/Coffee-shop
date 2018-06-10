@@ -1,39 +1,50 @@
-<h1><i class="fas fa-coffee"></i></span>Coffee Shop</h1>
-
-<h2>Your order is ready!!</h2>
-<p>{{coffee_order}} </p>
-
-<ul id='666'>
-  {{#each this}}
-    {{#unless drink}}
-      {{name}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Your Coffee Order Line-up</h2>
-
-<ul>
-  {{#each this}}
-    {{#if drink}}
-      {{ name}}
-    {{/if}}
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Coffee Shop</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Coffee Order Line-up</h2>
+      <ul>
+        {{#each this}} {{#if drink}}
+        <li>
+          {{name}}
+          <button type="button" class="btn btn-light btn-sm" name="drink" value="1">SluRRp</button>
+        </li>
+        {{/if}} {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h2>Past orders</h2>
+      <p>{{coffee_order}}</p>
+      <ul>
+        <p>{{this}}</p>
+        {{#each this}} {{#unless drink}}
+        <li>
+          {{name}}
+          <button type="button" class="btn btn-light btn-sm" name="drink" value="0"></button>
+        </li>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
 
 <h2>Make a New Coffee Order</h2>
-<form class="create-form">
 
+<form class="create-form">
   <div class="form-group">
     <label for="ca">Coffee Flavour:</label>
     <input type="text" id="ca" name="name">
+    <button type="submit" class="btn btn-warning">Place Order</button>
   </div>
-
-  <div class="form-group">
-    <label for="drink">Drink?</label>
-    <input type="radio" id="drink-1" name="drink" value="1"> GULP it!<br>
-    <input type="radio" id="drink-0" name="drink" value="0"> Order
-
-  </div>
-  <button type="submit">Place Order</button>
 </form>
+
+{{!--
+<div class="form-group">
+  <label for="drink"></label> --}} {{!--
+  <input type="radio" id="drink-1" name="drink" value="1"> GULP it!
+  <br>
+  <input type="radio" id="drink-0" name="drink" value="0"> Order --}}

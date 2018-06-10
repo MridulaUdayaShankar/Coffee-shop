@@ -1,7 +1,6 @@
 li {
     padding: 5px;
     margin: 5px;
-    background: #faebd7;
   }
   
   .label {
@@ -11,10 +10,17 @@ li {
   .create-form {
     padding: 5px;
     margin: 5px;
-  
   }
   
   .form-group {
     margin-bottom: 5px;
   }
-  
+  .col-md-12{
+    text-align: center;
+    background: rgba(29, 20, 2, 0.267);
+  }
+  body{
+    background-image: url("https://gratefulgrits.org/wp-content/uploads/2017/03/coffee.jpg");
+    background-repeat: no-repeat;
+    color: wheat;
+  }
