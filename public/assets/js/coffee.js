@@ -1,5 +1,14 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function () {
+  $("form[name='order']").validate({
+    rules: {
+      ca: "required",
+      messages: {
+        required: "Required input",
+        minlength: "This field is necessary"
+      }
+    }
+  });
 
   $(".update-drink").on("click", function (event) {
     var id = $(this).attr('data-id');
@@ -24,7 +33,7 @@ $(function () {
       name: $("#ca").val().trim(),
       drink: 1
     };
-
+    // if (data){
     // Send the POST request.
     $.ajax("/api/coffee", {
       type: "POST",
@@ -36,5 +45,6 @@ $(function () {
         location.reload();
       }
     );
+    // } else return;
   });
 });
