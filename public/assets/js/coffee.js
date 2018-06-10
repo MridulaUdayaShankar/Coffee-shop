@@ -29,7 +29,7 @@ $(function () {
       type: "POST",
       data: newCoffee
     }).then(
-      function () {
+      function (result) {
         console.log("created new order");
         // Reload the page to get the updated list
         location.reload();
