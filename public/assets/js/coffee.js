@@ -15,6 +15,7 @@ $(function () {
     );
   });
 
+
   $(".create-form").on("submit", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -29,7 +30,7 @@ $(function () {
       type: "POST",
       data: newCoffee
     }).then(
-      function (result) {
+      function () {
         console.log("created new order");
         // Reload the page to get the updated list
         location.reload();
